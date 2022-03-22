@@ -1,3 +1,9 @@
-FROM nginx
-COPY ./default.conf /etc/nginx/conf.d/default.conf
-COPY ./nginx.conf /etc/nginx/nginx.conf
+FROM tomcat:latest
+
+LABEL maintainer="mohan"
+
+ADD ./target/LoginWebApp-1.war /usr/local/tomcat/webapps/
+
+EXPOSE 8080
+
+CMD ["catalina.sh", "run"]
