@@ -1,4 +1,4 @@
-FROM lolhens/baseimage-openjre
-ADD target/petclinic.war petclinic.war
+FROM tomcat 
+ADD target/petclinic.war usr/local/tomcat/webapps
 EXPOSE 8085
 ENTRYPOINT ["java", "-jar", "petclinic.war"]
